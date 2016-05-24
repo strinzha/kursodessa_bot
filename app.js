@@ -35,11 +35,16 @@ var message = 'Курс в Одессе на ' + dd + '.' + mm + '.' + yyyy + '\
 
 for (var i in kurs ) {
   if (kurs.hasOwnProperty(i)) {
-    message += i + ':\n' + 'USD: ' + kurs[i].USD + '\n' + 'EUR: ' + kurs[i].EUR + '\n' + 'RUR: ' + kurs[i].RUR + '\n\n';  
+    message += i + ':\n' + 'USD: ' + kurs[i].USD + '\n' + 'EUR: ' + kurs[i].EUR + '\n' + 'RUR: ' + kurs[i].RUR + '\n\n';
   }
 }
 
 bot.onText(/\/курс/, function (msg, match) {
   var userId = msg.from.id;
   bot.sendMessage(userId, message);
+});
+
+bot.onText(/\/тютакатышотам/, function (msg, match) {
+  var userId = msg.from.id;
+  bot.sendMessage(userId, 'та ниче бобра даю');
 });
